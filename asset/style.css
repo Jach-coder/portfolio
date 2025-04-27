@@ -1,4 +1,4 @@
-/* Base */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
   }
   
   body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     background: #121212;
     color: #f0f0f0;
     min-height: 100vh;
@@ -21,6 +21,7 @@
     border-bottom: 1px solid #2c2c2c;
     justify-content: space-between; 
   }
+  
   .profile-pic {
     width: 70px;
     height: 70px;
@@ -28,11 +29,12 @@
     object-fit: cover;
     margin-right: 15px;
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.3); 
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
   
   .profile-pic:hover {
     box-shadow: 0 0 25px rgba(0, 255, 255, 0.5); 
+    transform: scale(1.05); /* Slight zoom effect */
   }
   
   .header-text h1 {
@@ -64,16 +66,14 @@
     box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
   }
   
-  /* Hover Effect for CV Button */
   .cv-view-button:hover {
     background-color: #008c8c;
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 255, 255, 0.4);
   }
   
-  /* Focus Effect for CV Button */
   .cv-view-button:focus {
-    outline: none;
+    outline: 2px solid #008c8c; /* A visible focus state */
   }
   
   /* CV Section */
@@ -85,7 +85,6 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
   }
   
-  /* Hover Effect for Close CV Button */
   #cv-section button {
     background-color: #ff4b5c;
     color: #fff;
@@ -104,7 +103,7 @@
   }
   
   #cv-section button:focus {
-    outline: none;
+    outline: 2px solid #ff2a3b; /* Visible focus state */
   }
   
   /* Navbar */
@@ -123,6 +122,10 @@
     flex-wrap: wrap;
     list-style: none;
     gap: 20px;
+  }
+  
+  .navbar li {
+    margin: 0 15px; /* Added margin for better spacing */
   }
   
   .navbar li button {
@@ -147,7 +150,7 @@
   .slider-wrapper {
     overflow: hidden;
     width: 100%;
-    height: 400px;
+    height: 60vh; /* Changed to use viewport height */
     position: relative;
   }
   
@@ -186,6 +189,7 @@
     transition: all 0.3s ease;
     text-align: center;
     padding-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1); 
   }
   
   .project-card img {
@@ -203,12 +207,12 @@
   
   .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.4); /* Glowing on hover */
+    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.4); 
     background-color: #252525;
     cursor: pointer;
   }
   
-  /* Scrollable Projects Section */
+
   .projects-slide {
     overflow-y: auto;
     max-height: 100%;
@@ -223,13 +227,13 @@
     background-color: rgba(255, 255, 255, 0.15);
     border-radius: 10px;
   }
+  
 
-/* Arrow Buttons */
-.arrow-button {
+  .arrow-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: transparent; 
+    background-color: transparent;
     color: #00ffff;
     font-size: 2rem;
     padding: 0;
@@ -237,12 +241,12 @@
     cursor: pointer;
     z-index: 10;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5); 
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
   }
   
   .arrow-button:hover {
-    transform: translateY(-50%) scale(1.2); 
-    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8); 
+    transform: translateY(-50%) scale(1.2);
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
   }
   
   #leftArrow {
@@ -253,4 +257,97 @@
     right: 20px;
   }
   
+
+  .arrow-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
   
+
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(0, 255, 255, 1);
+    }
+    100% {
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+  }
+  /* Media Queries */
+
+/* Small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-pic {
+    width: 60px;
+    height: 60px;
+    margin: 0 0 10px 0;
+  }
+
+  .header-text h1 {
+    font-size: 1.2rem;
+  }
+
+  .header-text p {
+    font-size: 0.8rem;
+  }
+
+  .cv-view-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .slider-wrapper {
+    height: 40vh; /* Smaller slider height on phones */
+  }
+
+  .project-card img {
+    height: 120px;
+  }
+}
+
+/* Medium devices (tablets, 600px - 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .profile-pic {
+    width: 65px;
+    height: 65px;
+  }
+
+  .header-text h1 {
+    font-size: 1.4rem;
+  }
+
+  .header-text p {
+    font-size: 0.85rem;
+  }
+
+  .cv-view-button {
+    padding: 9px 18px;
+  }
+
+  .slider-wrapper {
+    height: 50vh; /* Medium slider height */
+  }
+
+  .project-card img {
+    height: 140px;
+  }
+}
+
+/* Large devices (laptops and desktops, 901px and up) */
+@media (min-width: 901px) {
+  .slider-wrapper {
+    height: 60vh; /* Default slider height */
+  }
+
+  .project-card img {
+    height: 150px;
+  }
+}
