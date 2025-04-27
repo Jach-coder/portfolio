@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John Doe - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="asset/style.css" />
+</head>
+<body>
+
+  <header class="main-header">
+    <img src="asset/profile.jpg" alt="leg" class="profile-pic" />
+    <div class="header-text">
+      <h1>Resh Gemino</h1>
+      <p>App developer & System Developer</p>
+    </div>
+    <div class="cv-section">
+      <a href="asset/JohnDoe_CV.pdf" target="_blank" class="cv-view-button">View CV</a>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <nav class="navbar">
+      <ul>
+        <li><button onclick="goToSlide(0)" aria-label="Home">Home</button></li>
+        <li><button onclick="goToSlide(1)" aria-label="About">About</button></li>
+        <li><button onclick="goToSlide(2)" aria-label="Projects">Projects</button></li>
+        <li><button onclick="goToSlide(3)" aria-label="Contact">Contact</button></li>
+        <li><button onclick="goToSlide(4)" aria-label="Blog">Blog</button></li>
+      </ul>
+    </nav>
+
+    <div class="slider-wrapper">
+        <!-- Arrow buttons -->
+        <button id="leftArrow" class="arrow-button">&#8592;</button> <!-- Left Arrow -->
+        <button id="rightArrow" class="arrow-button">&#8594;</button> <!-- Right Arrow -->
+      <div class="slider" id="cubeSlider">
+        <section class="slide"><h2>Welcome</h2><p>This is a sleek, dark-themed portfolio to showcase my work.</p></section>
+        <section class="slide"><h2>About Me</h2><p>I’m a developer passionate about clean code, creative interfaces, and modern experiences.</p></section>
+        <section class="slide projects-slide">
+          <h2>My Projects</h2>
+          <div class="projects-grid">
+            <div class="project-card"><img src="asset/project1.jpg" alt="Project 1" /><h3>Project One</h3></div>
+            <div class="project-card"><img src="asset/project2.jpg" alt="Project 2" /><h3>Project Two</h3></div>
+            <div class="project-card"><img src="asset/project3.jpg" alt="Project 3" /><h3>Project Three</h3></div>
+            <div class="project-card"><img src="asset/project4.jpg" alt="Project 4" /><h3>Project Four</h3></div>
+            <div class="project-card"><img src="asset/project5.jpg" alt="Project 5" /><h3>Project Five</h3></div>
+          </div>
+        </section>
+        <section class="slide"><h2>Contact</h2><p>Feel free to reach out — I’m always open to collaborations and ideas.</p></section>
+        <section class="slide"><h2>Blog</h2><p>Occasional thoughts and insights on design, code, and productivity.</p></section>
+      </div>
+    </div>
+
+    <!-- Slide Indicators -->
+    <div class="slide-indicators" id="slideIndicators">
+      <span onclick="goToSlide(0)"></span>
+      <span onclick="goToSlide(1)"></span>
+      <span onclick="goToSlide(2)"></span>
+      <span onclick="goToSlide(3)"></span>
+      <span onclick="goToSlide(4)"></span>
+    </div>
+
+  </main>
+
+  <script src="script/script.js"></script>
+</body>
+</html>
