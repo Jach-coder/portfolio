@@ -20,7 +20,7 @@
 <body>
 
   <header class="main-header">
-    <img src="asset/profile.jpg" alt="Profile picture of Resh Gemino" class="profile-pic" />
+    <img src="asset/img_profile/profile.jpg" alt="Profile picture of Resh Gemino" class="profile-pic" />
     <div class="header-text">
       <h1>Resh Gemino</h1>
       <p>App Developer & System Developer</p>
@@ -33,32 +33,35 @@
   <main class="main-content">
     <nav class="navbar">
       <ul>
-        <li><button onclick="goToSlide(0)" aria-label="Go to Home section">Home</button></li>
-        <li><button onclick="goToSlide(1)" aria-label="Go to About section">About</button></li>
-        <li><button onclick="goToSlide(2)" aria-label="Go to Projects section">Projects</button></li>
-        <li><button onclick="goToSlide(3)" aria-label="Go to Contact section">Contact</button></li>
-        <li><button onclick="goToSlide(4)" aria-label="Go to Blog section">Blog</button></li>
+        <li><button id="homeNav" onclick="goToSlide(0)" aria-label="Go to Home section">Home</button></li>
+        <li><button id="aboutNav" onclick="goToSlide(1)" aria-label="Go to About section">About</button></li>
+        <li><button id="projectsNav" onclick="goToSlide(2)" aria-label="Go to Projects section">Projects</button></li>
+        <li><button id="certificationsNav" onclick="goToSlide(3)" aria-label="Go to Certifications section">Certifications</button></li>
+        <li><button id="contactNav" onclick="goToSlide(4)" aria-label="Go to Contact section">Contact</button></li>
+        <li><button id="blogNav" onclick="goToSlide(5)" aria-label="Go to Blog section">Blog</button></li>
       </ul>
     </nav>
 
     <div class="slider-wrapper">
-        <!-- Arrow buttons -->
-        <button id="leftArrow" class="arrow-button" aria-label="Previous Slide">&#8592;</button> <!-- Left Arrow -->
-        <button id="rightArrow" class="arrow-button" aria-label="Next Slide">&#8594;</button> <!-- Right Arrow -->
+      <!-- Arrow buttons -->
+      <button id="leftArrow" class="arrow-button" aria-label="Previous Slide">&#8592;</button>
+      <button id="rightArrow" class="arrow-button" aria-label="Next Slide">&#8594;</button>
       <div class="slider" id="cubeSlider">
         <section class="slide" aria-labelledby="slide-home">
           <h2 id="slide-home">Welcome</h2>
           <p>This is a sleek, dark-themed portfolio to showcase my work.</p>
         </section>
+
         <section class="slide" aria-labelledby="slide-about">
           <h2 id="slide-about">About Me</h2>
           <p>I’m a developer passionate about clean code, creative interfaces, and modern experiences.</p>
         </section>
+
         <section class="slide projects-slide" aria-labelledby="slide-projects">
           <h2 id="slide-projects">My Projects</h2>
           <div class="projects-grid">
             <div class="project-card">
-              <img src="asset/project1.jpg" alt="Screenshot of Project One showcasing the user interface" />
+              <img src="asset/img_projects/project.jpg" alt="Screenshot of Project One showcasing the user interface" />
               <h3>Project One</h3>
             </div>
             <div class="project-card">
@@ -79,10 +82,30 @@
             </div>
           </div>
         </section>
+
+        <section class="slide certifications-slide" aria-labelledby="slide-certifications">
+          <h2 id="slide-certifications">Certifications</h2>
+          <div class="certifications-grid">
+            <div class="certification-card">
+              <strong>Google IT Support Professional Certificate</strong>
+              <em>Coursera | Issued Jan 2024</em>
+            </div>
+            <div class="certification-card">
+              <strong>Meta Front-End Developer Certificate</strong>
+              <em>Coursera | Issued Mar 2024</em>
+            </div>
+            <div class="certification-card">
+              <strong>Responsive Web Design</strong>
+              <em>freeCodeCamp | Issued Dec 2023</em>
+            </div>
+          </div>
+        </section>
+
         <section class="slide" aria-labelledby="slide-contact">
           <h2 id="slide-contact">Contact</h2>
           <p>Feel free to reach out — I’m always open to collaborations and ideas.</p>
         </section>
+
         <section class="slide" aria-labelledby="slide-blog">
           <h2 id="slide-blog">Blog</h2>
           <p>Occasional thoughts and insights on design, code, and productivity.</p>
@@ -90,16 +113,24 @@
       </div>
     </div>
 
-    <!-- Slide Indicators -->
     <div class="slide-indicators" id="slideIndicators" aria-label="Slide navigation">
       <span onclick="goToSlide(0)" aria-label="Go to Home slide"></span>
       <span onclick="goToSlide(1)" aria-label="Go to About slide"></span>
       <span onclick="goToSlide(2)" aria-label="Go to Projects slide"></span>
-      <span onclick="goToSlide(3)" aria-label="Go to Contact slide"></span>
-      <span onclick="goToSlide(4)" aria-label="Go to Blog slide"></span>
+      <span onclick="goToSlide(3)" aria-label="Go to Certifications slide"></span>
+      <span onclick="goToSlide(4)" aria-label="Go to Contact slide"></span>
+      <span onclick="goToSlide(5)" aria-label="Go to Blog slide"></span>
     </div>
 
   </main>
+
+  <div id="infoModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
 
   <script src="script/script.js"></script>
 </body>
