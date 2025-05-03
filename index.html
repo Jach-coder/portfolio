@@ -102,31 +102,33 @@
 
         <section class="slide contact-slide" aria-labelledby="slide-contact">
           <h2 id="slide-contact">Contact</h2>
-          <p>Feel free to reach out — I’m always open to collaborations, freelance work, or just a good chat about development!</p>
+          <p>Feel free to reach out!</p>
         
           <div class="contact-info">
-            <p><strong>Email:</strong> <a href="mailto:reshgemino@example.com">reshgemino@example.com</a></p>
-            <p><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
-            <p><strong>Location:</strong> Cebu City, Philippines</p>
-            <div class="social-links">
-              <a href="https://github.com/reshgemino" target="_blank" aria-label="GitHub Profile">GitHub</a> |
-              <a href="https://linkedin.com/in/reshgemino" target="_blank" aria-label="LinkedIn Profile">LinkedIn</a>
-            </div>
+            <!-- Contact Icons -->
+            <a href="mailto:reshgemino@example.com" aria-label="Email" class="contact-icon">
+              <img src="asset/email-icon.png" alt="Email" />
+            </a>
+            <a href="tel:+1234567890" aria-label="Phone" class="contact-icon">
+              <img src="asset/phone-icon.png" alt="Phone" />
+            </a>
+            <a href="https://github.com/reshgemino" target="_blank" aria-label="GitHub" class="contact-icon">
+              <img src="asset/github-icon.png" alt="GitHub" />
+            </a>
+            <a href="https://linkedin.com/in/reshgemino" target="_blank" aria-label="LinkedIn" class="contact-icon">
+              <img src="asset/linkedin-icon.png" alt="LinkedIn" />
+            </a>
           </div>
         
+          <!-- Simple Contact Form -->
           <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-        
-            <label for="email">Email</label>
-            <input type="email" id="email" name="_replyto" required>
-        
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-        
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="_replyto" placeholder="Your Email" required>
+            <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
           </form>
         </section>
+        
         
 
         <section class="slide" aria-labelledby="slide-blog">
@@ -148,7 +150,7 @@
 
   <div id="infoModal" class="modal hidden">
     <div class="modal-content">
-      <span class="close-btn">&times;</span>
+      <span class="close-btn" style="display: none;">&times;</span>
       <h3 id="modalTitle"></h3>
       <p id="modalDescription"></p>
     </div>
