@@ -43,7 +43,6 @@
     </nav>
 
     <div class="slider-wrapper">
-      <!-- Arrow buttons -->
       <button id="leftArrow" class="arrow-button" aria-label="Previous Slide">&#8592;</button>
       <button id="rightArrow" class="arrow-button" aria-label="Next Slide">&#8594;</button>
       <div class="slider" id="cubeSlider">
@@ -101,10 +100,34 @@
           </div>
         </section>
 
-        <section class="slide" aria-labelledby="slide-contact">
+        <section class="slide contact-slide" aria-labelledby="slide-contact">
           <h2 id="slide-contact">Contact</h2>
-          <p>Feel free to reach out — I’m always open to collaborations and ideas.</p>
+          <p>Feel free to reach out — I’m always open to collaborations, freelance work, or just a good chat about development!</p>
+        
+          <div class="contact-info">
+            <p><strong>Email:</strong> <a href="mailto:reshgemino@example.com">reshgemino@example.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            <p><strong>Location:</strong> Cebu City, Philippines</p>
+            <div class="social-links">
+              <a href="https://github.com/reshgemino" target="_blank" aria-label="GitHub Profile">GitHub</a> |
+              <a href="https://linkedin.com/in/reshgemino" target="_blank" aria-label="LinkedIn Profile">LinkedIn</a>
+            </div>
+          </div>
+        
+          <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        
+            <label for="email">Email</label>
+            <input type="email" id="email" name="_replyto" required>
+        
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        
+            <button type="submit">Send Message</button>
+          </form>
         </section>
+        
 
         <section class="slide" aria-labelledby="slide-blog">
           <h2 id="slide-blog">Blog</h2>
@@ -121,7 +144,6 @@
       <span onclick="goToSlide(4)" aria-label="Go to Contact slide"></span>
       <span onclick="goToSlide(5)" aria-label="Go to Blog slide"></span>
     </div>
-
   </main>
 
   <div id="infoModal" class="modal hidden">
