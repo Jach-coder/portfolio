@@ -80,6 +80,22 @@ body {
   margin-bottom: 15px;
   color: #00ffff;
 }
+#infoModal .modal-content {
+  max-width: 90%;
+  width: 600px; /* Or 100% for full width */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#modalImage {
+  width: 100%;
+  height: auto;
+  max-height: 75px; /* Adjust to limit height if needed */
+  object-fit: contain;
+  margin-bottom: 1rem; /* Adds space between image and text */
+  border-radius: 8px;
+}
 
 .profile-pic {
   width: 70px;

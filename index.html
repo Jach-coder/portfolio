@@ -79,46 +79,59 @@
         <section class="slide about-me-slide" aria-labelledby="slide-about">
           <h2 id="slide-about">About Me</h2>
           <div class="about-skill">
-            <img src="asset/icons/html.png" alt="HTML Icon" class="skill-icon" />
+            <img src="asset/img_about/js.jpg" alt="js Icon" class="skill-icon" />
             <p><strong>HTML, CSS, JavaScript:</strong> I use these to build responsive, user-friendly interfaces. Clean design and interactivity are at the heart of my front-end development approach.</p>
           </div>
         
           <div class="about-skill">
-            <img src="asset/icons/java.png" alt="Java Icon" class="skill-icon" />
+            <img src="asset/img_about/java.jpg" alt="Java Icon" class="skill-icon" />
             <p><strong>Java:</strong> I'm currently developing games like a tap-tap game using Java, blending logic, animation, and user experience.</p>
           </div>
         
           <div class="about-skill">
-            <img src="asset/icons/csharp.png" alt="C# Icon" class="skill-icon" />
+            <img src="asset/img_about/c.jpg" alt="C# Icon" class="skill-icon" />
             <p><strong>C# with WPF:</strong> I've developed desktop systems using Windows Presentation Foundation (WPF), focusing on clean UI and solid backend functionality.</p>
           </div>
         
           <div class="about-skill">
-            <img src="asset/icons/python.png" alt="Python Icon" class="skill-icon" />
+            <img src="asset/img_about/python.jpg" alt="Python Icon" class="skill-icon" />
             <p><strong>Python:</strong> I use Python for scripting, automation, and exploring data-based solutions to real-world problems.</p>
           </div>
+          <div class="about-skill">
+            <img src="asset/img_about/sql.jpg" alt="SQL Icon" class="skill-icon" />
+            <p><strong>SQL & SSMS:</strong> I use SQL Server Management Studio (SSMS) to manage relational databases—writing queries, stored procedures, and designing schemas. I also integrate SQL databases with the desktop systems I build in C# using WPF, enabling real-time data storage, retrieval, and management.</p>
+          </div>        
         </section>
 
         <!-- Projects Slide -->
         <section class="slide projects-slide" aria-labelledby="slide-projects">
           <h2 id="slide-projects">My Projects</h2>
           <div class="projects-grid">
-            <div class="project-card">
-              <img src="asset/img_projects/project.jpg" alt="Screenshot of Project One showcasing the user interface" />
-              <h3>Project One</h3>
+            <!-- Project 1: Patient Record Management System -->
+            <div class="project-card" data-description="A system created using C# and SQL to handle patient records, manage them, and monitor rising cases for the month. It allows the recording and management of patient data efficiently." data-image="asset/img_about/c.jpg">
+              <img src="asset/img_projects/project.jpg" alt="Screenshot of the Patient Record Management System showcasing the user interface" />
+              <h3>Patient Record Management System</h3>
             </div>
-            <div class="project-card">
-              <img src="asset/project2.jpg" alt="Screenshot of Project Two highlighting app functionality" />
-              <h3>Project Two</h3>
+
+            <!-- Project 2: Click Click Game (Java, Android Studio) -->
+            <div class="project-card" data-description="A fast-paced Click Click Game developed using Java in Android Studio, where players tap the screen to score points within a set time limit." data-image="asset/img_projects/click_click_game.jpg">
+              <img src="asset/img_projects/project2.jpg" alt="Screenshot of the Click Click Game showing the game interface" />
+              <h3>Click Click Game</h3>
             </div>
+
+            <!-- Project 3: Vacant -->
             <div class="project-card">
               <img src="asset/project3.jpg" alt="Project Three UI design with a sleek layout" />
               <h3>Project Three</h3>
             </div>
+
+            <!-- Project 4: Vacant -->
             <div class="project-card">
               <img src="asset/project4.jpg" alt="Project Four website mockup with clean design" />
               <h3>Project Four</h3>
             </div>
+
+            <!-- Project 5: Vacant -->
             <div class="project-card">
               <img src="asset/project5.jpg" alt="Project Five demonstrating unique features" />
               <h3>Project Five</h3>
@@ -191,14 +204,15 @@
     </div>
   </main>
 
-  <!-- Modal for Information -->
-  <div id="infoModal" class="modal hidden">
-    <div class="modal-content">
-      <span class="close-btn" style="display: none;">&times;</span>
-      <h3 id="modalTitle"></h3>
-      <p id="modalDescription"></p>
-    </div>
+<!-- Modal for Information -->
+<div id="infoModal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-btn" style="display: none;">&times;</span>
+    <img id="modalImage" src="" alt="Modal Visual" />
+    <h3 id="modalTitle"></h3>
+    <p id="modalDescription"></p>
   </div>
+</div>
 
   <!-- External JavaScript -->
   <script src="script/script.js"></script>

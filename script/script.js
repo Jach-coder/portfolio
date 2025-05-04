@@ -14,11 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const updateActiveState = () => {
     navButtons.forEach((button, index) => {
-      if (index === currentSlide) {
-        button.classList.add('active');
-      } else {
-        button.classList.remove('active');
-      }
+      button.classList.toggle('active', index === currentSlide);
     });
   };
 
@@ -44,18 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
   rightArrow.addEventListener('click', () => navigateWithArrows(1));
 
   window.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') {
-      navigateWithArrows(-1);
-    } else if (e.key === 'ArrowRight') {
-      navigateWithArrows(1);
-    }
+    if (e.key === 'ArrowLeft') navigateWithArrows(-1);
+    if (e.key === 'ArrowRight') navigateWithArrows(1);
   });
 
   window.addEventListener('resize', () => {
     if (resizeFrame) cancelAnimationFrame(resizeFrame);
-    resizeFrame = requestAnimationFrame(() => {
-      goToSlide(currentSlide);
-    });
+    resizeFrame = requestAnimationFrame(() => goToSlide(currentSlide));
   });
 
   wrapper.addEventListener('touchstart', (e) => {
@@ -63,20 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   wrapper.addEventListener('touchend', (e) => {
-    const endX = e.changedTouches[0].clientX;
-    const swipeDistance = endX - startX;
-
-    if (swipeDistance > SWIPE_THRESHOLD) {
-      navigateWithArrows(-1);
-    } else if (swipeDistance < -SWIPE_THRESHOLD) {
-      navigateWithArrows(1);
-    }
+    const swipeDistance = e.changedTouches[0].clientX - startX;
+    if (swipeDistance > SWIPE_THRESHOLD) navigateWithArrows(-1);
+    if (swipeDistance < -SWIPE_THRESHOLD) navigateWithArrows(1);
   });
 
   navButtons.forEach((button, index) => {
-    button.addEventListener('click', () => {
-      goToSlide(index);
-    });
+    button.addEventListener('click', () => goToSlide(index));
   });
 
   goToSlide(0);
@@ -85,11 +69,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('infoModal');
   const modalTitle = document.getElementById('modalTitle');
   const modalDescription = document.getElementById('modalDescription');
+  const modalImage = document.getElementById('modalImage');
   const closeBtn = document.querySelector('.close-btn');
 
-  const showModal = (title, description) => {
+  const showModal = (title, description, imageURL = '') => {
     modalTitle.textContent = title;
     modalDescription.textContent = description;
+
+    if (imageURL) {
+      modalImage.src = imageURL;
+      modalImage.style.display = 'block';
+      modalImage.alt = title;
+    } else {
+      modalImage.style.display = 'none';
+    }
+
     modal.classList.remove('hidden');
   };
 
@@ -107,7 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
     item.addEventListener('click', () => {
       const title = item.querySelector('strong')?.textContent || 'Certification';
       const desc = item.querySelector('em')?.textContent || 'No additional info.';
-      showModal(title, desc);
+      const image = item.dataset.image || ''; // Pull image from data-image attribute
+      showModal(title, desc, image);
     });
   });
 
@@ -116,7 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('click', () => {
       const title = card.querySelector('h3')?.textContent || 'Project';
       const desc = card.getAttribute('data-description') || 'No description available.';
-      showModal(title, desc);
+      const image = card.dataset.image || ''; // Pull image from data-image attribute
+      showModal(title, desc, image);
     });
   });
 
