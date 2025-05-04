@@ -742,71 +742,14 @@ body {
     display: none;
   }
 }
-@media (max-width: 400px) {
-  body {
-    padding: 8px;
-  }
-
-  .main-header {
-    padding: 10px;
-  }
-
-  .header-text h1 {
-    font-size: 1rem;
-  }
-
-  .header-text p {
+@media (max-width: 360px) {
+  .navbar li button {
     font-size: 0.75rem;
+    padding: 6px 10px;
   }
 
-  .profile-pic {
-    width: 50px;
-    height: 50px;
-  }
-
-  .cv-view-button {
-    padding: 6px 12px;
-    font-size: 0.8rem;
-  }
-
-  .certifications-grid,
-  .projects-grid {
-    gap: 15px;
-    padding: 0 10px;
-  }
-
-  .certification-card strong,
-  .project-card h3 {
-    font-size: 0.95rem;
-  }
-
-  .certification-card em {
-    font-size: 0.8rem;
-  }
-
-  .slide p,
-  .contact-info p {
-    font-size: 1rem;
-  }
-
-  .cta-button {
-    padding: 10px 20px;
-    font-size: 1rem;
-  }
-
-  .about-skill {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-skill p {
-    font-size: 0.95rem;
-    text-align: center;
-  }
-
-  .skill-icon {
-    width: 40px;
-    height: 40px;
+  .navbar ul {
+    gap: 6px;
+    padding: 0 8px;
   }
 }
