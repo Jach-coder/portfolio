@@ -119,4 +119,13 @@ document.addEventListener('DOMContentLoaded', () => {
       showModal(title, desc);
     });
   });
+
+  // About Me modal trigger
+  document.querySelectorAll('.about-skill').forEach((card) => {
+    card.addEventListener('click', () => {
+      const title = card.querySelector('strong')?.textContent || 'Skill';
+      const desc = card.querySelector('p')?.textContent || 'No description available.';
+      showModal(title, desc);
+    });
+  });
 });
