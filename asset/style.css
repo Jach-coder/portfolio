@@ -25,7 +25,7 @@ body {
   transform: translateY(20px);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   position: relative;
-
+  overflow: hidden;
 }
 
 .main-header {
@@ -171,7 +171,7 @@ body {
   text-align: center;
   position: sticky;
   top: 0;
-  z-index: 10;
+  border-top: 15px;
 }
 
 .navbar ul {
@@ -214,9 +214,8 @@ body {
 
 /* Cube Slider */
 .slider-wrapper {
-  overflow: hidden;
   width: 100%;
-  height: 60vh;
+  height: 80vh;
   position: relative;
 }
 
@@ -233,7 +232,7 @@ body {
   box-sizing: border-box;
   padding: 40px 20px;
   text-align: center;
-  background-color: #1a1a1a;
+  background-color: #e4c2c2;
   box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.02);
 }
 
@@ -525,7 +524,7 @@ body {
   }
 
   .slider-wrapper {
-    height: 40vh;
+    height: 100%;
   }
 
   .project-card img {
@@ -552,7 +551,7 @@ body {
   }
 
   .slider-wrapper {
-    height: 50vh;
+    height: 60vh;
   }
 
   .project-card img {
@@ -735,5 +734,11 @@ body {
   .navbar li button {
     font-size: 0.9rem;
     padding: 6px 10px;
+  }
+}
+/* Hide arrow buttons on mobile devices */
+@media (max-width: 650px) {
+  .arrow-button {
+    display: none;
   }
 }
