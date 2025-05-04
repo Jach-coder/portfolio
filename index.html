@@ -19,6 +19,7 @@
 </head>
 <body>
 
+  <!-- Header Section -->
   <header class="main-header">
     <img src="asset/img_profile/profile.jpg" alt="Profile picture of Resh Gemino" class="profile-pic" />
     <div class="header-text">
@@ -30,7 +31,9 @@
     </div>
   </header>
 
+  <!-- Main Content Section -->
   <main class="main-content">
+    <!-- Navigation Bar -->
     <nav class="navbar">
       <ul>
         <li><button id="homeNav" onclick="goToSlide(0)" aria-label="Go to Home section">Home</button></li>
@@ -42,40 +45,61 @@
       </ul>
     </nav>
 
+    <!-- Slider Wrapper -->
     <div class="slider-wrapper">
       <button id="leftArrow" class="arrow-button" aria-label="Previous Slide">&#8592;</button>
       <button id="rightArrow" class="arrow-button" aria-label="Next Slide">&#8594;</button>
       <div class="slider" id="cubeSlider">
-        <section class="slide" aria-labelledby="slide-home">
-          <h2 id="slide-home">Welcome</h2>
-          <p>This is a sleek, dark-themed portfolio to showcase my work.</p>
-        </section>
 
+    <!-- Home Slide -->
+    <section class="slide" aria-labelledby="slide-home">
+      <h2 id="slide-home">Welcome to My Portfolio</h2>
+      <p>Hello, I’m Resh Gemino. I’m an app and system developer who loves to create efficient and intuitive software solutions. Explore my work, learn more about my skills, and see how we can collaborate on exciting projects!</p>
+
+      <!-- Call to Action: View Projects & Contact -->
+      <div class="cta">
+        <a href="#projects" class="cta-button">Explore My Projects</a>
+        <a href="#contact" class="cta-button">Get in Touch</a>
+      </div>
+      
+      <!-- Short Skill Overview -->
+      <div class="skills-overview">
+        <h3>Technologies I Work With</h3>
+        <p><strong>JavaScript, Python, C#, Java, HTML, CSS</strong></p>
+      </div>
+      
+      <!-- Personal Quote or Short Bio -->
+      <div class="bio">
+        <p>"Driven by passion, I aim to build software that empowers users and enhances their daily experiences."</p>
+      </div>
+    </section>
+
+
+        <!-- About Me Slide -->
         <section class="slide about-me-slide" aria-labelledby="slide-about">
           <h2 id="slide-about">About Me</h2>
           <div class="about-skill">
-            <img src="asset/icons/html.png" alt="HTML Icon" class="skill-icon">
+            <img src="asset/icons/html.png" alt="HTML Icon" class="skill-icon" />
             <p><strong>HTML, CSS, JavaScript:</strong> I use these to build responsive, user-friendly interfaces. Clean design and interactivity are at the heart of my front-end development approach.</p>
           </div>
         
           <div class="about-skill">
-            <img src="asset/icons/java.png" alt="Java Icon" class="skill-icon">
+            <img src="asset/icons/java.png" alt="Java Icon" class="skill-icon" />
             <p><strong>Java:</strong> I'm currently developing games like a tap-tap game using Java, blending logic, animation, and user experience.</p>
           </div>
         
           <div class="about-skill">
-            <img src="asset/icons/csharp.png" alt="C# Icon" class="skill-icon">
+            <img src="asset/icons/csharp.png" alt="C# Icon" class="skill-icon" />
             <p><strong>C# with WPF:</strong> I've developed desktop systems using Windows Presentation Foundation (WPF), focusing on clean UI and solid backend functionality.</p>
           </div>
         
           <div class="about-skill">
-            <img src="asset/icons/python.png" alt="Python Icon" class="skill-icon">
+            <img src="asset/icons/python.png" alt="Python Icon" class="skill-icon" />
             <p><strong>Python:</strong> I use Python for scripting, automation, and exploring data-based solutions to real-world problems.</p>
           </div>
-        
-          <!-- You can add more content here -->
         </section>
 
+        <!-- Projects Slide -->
         <section class="slide projects-slide" aria-labelledby="slide-projects">
           <h2 id="slide-projects">My Projects</h2>
           <div class="projects-grid">
@@ -102,6 +126,7 @@
           </div>
         </section>
 
+        <!-- Certifications Slide -->
         <section class="slide certifications-slide" aria-labelledby="slide-certifications">
           <h2 id="slide-certifications">Certifications</h2>
           <div class="certifications-grid">
@@ -120,12 +145,11 @@
           </div>
         </section>
 
+        <!-- Contact Slide -->
         <section class="slide contact-slide" aria-labelledby="slide-contact">
           <h2 id="slide-contact">Contact</h2>
           <p>Feel free to reach out!</p>
-        
           <div class="contact-info">
-            <!-- Contact Icons -->
             <a href="mailto:reshgemino@example.com" aria-label="Email" class="contact-icon">
               <img src="asset/email-icon.png" alt="Email" />
             </a>
@@ -139,8 +163,7 @@
               <img src="asset/linkedin-icon.png" alt="LinkedIn" />
             </a>
           </div>
-        
-          <!-- Simple Contact Form -->
+
           <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <input type="text" id="name" name="name" placeholder="Your Name" required>
             <input type="email" id="email" name="_replyto" placeholder="Your Email" required>
@@ -148,9 +171,8 @@
             <button type="submit">Send Message</button>
           </form>
         </section>
-        
-        
 
+        <!-- Blog Slide -->
         <section class="slide" aria-labelledby="slide-blog">
           <h2 id="slide-blog">Blog</h2>
           <p>Occasional thoughts and insights on design, code, and productivity.</p>
@@ -158,6 +180,7 @@
       </div>
     </div>
 
+    <!-- Slide Indicators -->
     <div class="slide-indicators" id="slideIndicators" aria-label="Slide navigation">
       <span onclick="goToSlide(0)" aria-label="Go to Home slide"></span>
       <span onclick="goToSlide(1)" aria-label="Go to About slide"></span>
@@ -168,6 +191,7 @@
     </div>
   </main>
 
+  <!-- Modal for Information -->
   <div id="infoModal" class="modal hidden">
     <div class="modal-content">
       <span class="close-btn" style="display: none;">&times;</span>
@@ -176,6 +200,7 @@
     </div>
   </div>
 
+  <!-- External JavaScript -->
   <script src="script/script.js"></script>
 </body>
 </html>

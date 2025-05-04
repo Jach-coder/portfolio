@@ -617,3 +617,123 @@ body {
   font-size: 1.2rem;
   text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
 }
+/* Home Slide - Section Styling */
+.slide {
+  background-color: #1a1a1a; /* Dark background for the entire section */
+  padding: 40px 20px;
+  text-align: center;
+  color: #ccc; /* Light grey text for readability */
+  overflow-y: auto; /* Enables vertical scrolling if needed */
+  max-height: 500px; /* Optional: set a max height for scrolling */
+}
+
+/* Custom Scrollbar */
+.slide::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.slide::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 255, 255, 0.3); /* Subtle cyan color for the scrollbar */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4); /* Glowing effect */
+}
+
+.slide::-webkit-scrollbar-track {
+  background-color: #1a1a1a; /* Track color */
+}
+
+/* Title Styling */
+#slide-home {
+  font-size: 3rem; /* Larger font size for the title */
+  font-weight: 600;
+  color: #00FFFF; /* Neon cyan color for title */
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.5), 0 0 12px rgba(0, 255, 255, 0.5); /* Soft glow effect */
+  margin-bottom: 20px;
+}
+
+/* Description Text Styling */
+.slide p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: #ccc; /* Light grey text for the description */
+}
+
+/* Call to Action Styling */
+.cta {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.cta-button {
+  background-color: #00FFFF; /* Neon cyan background for the buttons */
+  color: #1a1a1a; /* Dark text on the buttons */
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border: 2px solid #00FFFF;
+  border-radius: 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #1a1a1a;
+  color: #00FFFF;
+  transform: translateY(-5px); /* Hover effect: button lifts up */
+}
+
+/* Short Skill Overview */
+.skills-overview {
+  margin-top: 30px;
+  color: #fff; /* White text for the skill section */
+}
+
+.skills-overview h3 {
+  font-size: 2rem;
+  color: #00FFFF; /* Neon cyan for the subheading */
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+  margin-bottom: 10px;
+}
+
+.skills-overview p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Personal Quote or Bio */
+.bio {
+  margin-top: 30px;
+}
+
+.bio p {
+  font-style: italic;
+  font-size: 1.4rem;
+  color: #ccc; /* Light grey text for the quote */
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.3); /* Subtle neon glow for the quote */
+}
+
+/* --- Modified .navbar ul for 2-row layout on small screens --- */
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-wrap: wrap;
+    max-height: calc(2 * 40px);
+    overflow: hidden;
+    justify-content: center;
+    gap: 10px 15px;
+    padding: 0 10px;
+  }
+
+  .navbar li {
+    flex: 1 1 30%;
+    margin: 5px 0;
+  }
+
+  .navbar li button {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+}
