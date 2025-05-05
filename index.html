@@ -16,6 +16,7 @@
   <title>Resh Gemino - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="asset/style.css" />
+  
 </head>
 <body>
 
@@ -164,25 +165,22 @@
           <p>Feel free to reach out!</p>
           <div class="contact-info">
             <a href="mailto:reshgemino@example.com" aria-label="Email" class="contact-icon">
-              <img src="asset/email-icon.png" alt="Email" />
-            </a>
-            <a href="tel:+1234567890" aria-label="Phone" class="contact-icon">
-              <img src="asset/phone-icon.png" alt="Phone" />
+              <img src="asset/img_contact/email.jpg" alt="Email" />
             </a>
             <a href="https://github.com/reshgemino" target="_blank" aria-label="GitHub" class="contact-icon">
-              <img src="asset/github-icon.png" alt="GitHub" />
+              <img src="asset/img_contact/github.jpg" alt="GitHub" />
             </a>
             <a href="https://linkedin.com/in/reshgemino" target="_blank" aria-label="LinkedIn" class="contact-icon">
-              <img src="asset/linkedin-icon.png" alt="LinkedIn" />
+              <img src="asset/img_contact/linkn.jpg" alt="LinkedIn" />
             </a>
           </div>
 
-          <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
-            <input type="email" id="email" name="_replyto" placeholder="Your Email" required>
-            <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-          </form>
+          <form class="custom-contact-form" id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+          </form>          
         </section>
 
         <!-- Blog Slide -->
@@ -215,6 +213,8 @@
 </div>
 
   <!-- External JavaScript -->
-  <script src="script/script.js"></script>
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="src/script/script.js"></script> 
+  <script src="src/script/Contactform.js"></script>
 </body>
 </html>
