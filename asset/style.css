@@ -68,12 +68,14 @@ body {
 .modal-content {
   background: #1f1f1f;
   color: #fff;
-  padding: 20px 30px;
-  border-radius: 10px;
-  max-width: 500px;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 700px;
+  width: 90%;
   text-align: center;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
   animation: fadeIn 0.3s ease;
+  position: relative;
 }
 
 .modal-content h3 {
@@ -90,13 +92,21 @@ body {
 
 #modalImage {
   width: 100%;
-  height: auto;
-  max-height: 75px; /* Adjust to limit height if needed */
-  object-fit: contain;
-  margin-bottom: 1rem; /* Adds space between image and text */
-  border-radius: 8px;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+  background-color: rgba(0, 255, 255, 0.15); /* subtle neon glow */
+  animation: floatImage 3s ease-in-out infinite;
+  transition: transform 0.3s ease;
 }
 
+@keyframes floatImage {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
 .profile-pic {
   width: 70px;
   height: 70px;
@@ -701,33 +711,6 @@ body {
   color: #ccc; /* Light grey text for the description */
 }
 
-/* Call to Action Styling */
-.cta {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 30px;
-}
-
-.cta-button {
-  background-color: #00FFFF; /* Neon cyan background for the buttons */
-  color: #1a1a1a; /* Dark text on the buttons */
-  padding: 12px 30px;
-  font-size: 1.1rem;
-  border: 2px solid #00FFFF;
-  border-radius: 8px;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #1a1a1a;
-  color: #00FFFF;
-  transform: translateY(-5px); /* Hover effect: button lifts up */
-}
-
 /* Short Skill Overview */
 .skills-overview {
   margin-top: 30px;
@@ -778,6 +761,12 @@ body {
     font-size: 0.9rem;
     padding: 6px 10px;
   }
+  .cv-section {
+    margin-top: 20px;
+
+  }
+  
+  
 }
 /* Hide arrow buttons on mobile devices */
 @media (max-width: 650px) {
